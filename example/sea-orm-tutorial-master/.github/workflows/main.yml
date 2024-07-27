@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+  push:
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+    branches:
+      - master
+      - pr/**/ci
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      # Try to build all examples
+      - name: Build bakery-backend example
+        run: cargo build --manifest-path bakery-backend/Cargo.toml
+      - name: Build rocket-example
+        run: cargo build --manifest-path rocket-example/Cargo.toml
+      - name: Build graphql-example
+        run: cargo build --manifest-path graphql-example/Cargo.toml
+
+      # Try to build mdbooks
+      - name: Install mdbook
+        run: (test -x $HOME/.cargo/bin/mdbook || cargo install --debug --vers "^0.4" mdbook)
+      - name: Build tutorials-book mdbook
+        run: mdbook build tutorials-book

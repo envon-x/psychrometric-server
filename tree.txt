@@ -1,0 +1,21 @@
+.
+├── Cargo.lock
+├── Cargo.toml
+├── src
+│   ├── common
+│   ├── ideal
+│   │   ├── domain
+│   │   ├── infrastructure
+│   │   ├── presentation
+│   │   └── use-cases
+│   ├── main.rs
+│   ├── van-der-waals
+│   │   ├── domain
+│   │   ├── infrastructure
+│   │   ├── presentation
+│   │   └── use-cases
+│   └── virial
+│       ├── domain
+│       ├── infrastructure
+│       ├── presentation
+│       └── use-cases
