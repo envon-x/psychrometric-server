@@ -7,7 +7,7 @@ pub struct Magnitude<Unit> {
 }
 
 impl<T> Magnitude<T> {
-  fn new(name: String, value: f64, unit: T) -> Self {
+  pub fn new(name: String, value: f64, unit: T) -> Self {
     Magnitude {name, value, unit}
   }
 }

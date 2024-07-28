@@ -14,12 +14,7 @@ pub trait EquationOfState {
     molar_volume: &Magnitude<cubic_meter>, 
     temperature: &Magnitude<kelvin>
   ) -> Magnitude<pascal>;
-  //  {
 
-  //   // let p = z * R * temperature.
-  //   _!NotI
-  // }
-  
   fn calculate_volume(
     &self, 
     pressure: &Magnitude<pascal>, 

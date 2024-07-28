@@ -1,1 +1,1 @@
-pub mod ideal_gas;
+pub mod ideal_eos;
