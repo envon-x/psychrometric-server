@@ -8,9 +8,9 @@ use crate::common::physics::thermo::eos::EquationOfState;
 
 
 pub fn calculate_pressure(
-    eos: &dyn EquationOfState, 
-    molar_volume: &Magnitude<cubic_meter>, 
-    temperature: &Magnitude<kelvin>) -> 
-    Magnitude<pascal> {
-    eos.calculate_pressure(molar_volume, temperature)
+  eos: &dyn EquationOfState, 
+  molar_volume: &Magnitude<cubic_meter>, 
+  temperature: &Magnitude<kelvin>) -> 
+  Magnitude<pascal> {
+  eos.calculate_pressure(molar_volume, temperature)
 }

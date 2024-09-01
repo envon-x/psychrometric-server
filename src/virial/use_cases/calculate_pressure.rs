@@ -7,6 +7,6 @@ use uom::si::thermodynamic_temperature::kelvin;
 
 use crate::common::physics::magnitude::Magnitude;
 
-pub fn calculate_pressure(eos: &dyn EquationOfState, molar_volume: &Magnitude<cubic_meter>, temperature: &Magnitude<kelvin>) -> Magnitude<pascal> {
-    eos.calculate_pressure(molar_volume, temperature)
+pub fn calculate_pressure(eos: &dyn EquationOfState, z: f64, molar_volume: &Magnitude<cubic_meter>, temperature: &Magnitude<kelvin>) -> Magnitude<pascal> {
+    eos.calculate_pressure(z, molar_volume, temperature)
 }

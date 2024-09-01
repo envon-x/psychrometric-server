@@ -5,4 +5,5 @@ pub mod meteorology;
 
 // files
 pub mod magnitude;
-pub mod altitude;
+pub mod component;
+pub mod mixture;

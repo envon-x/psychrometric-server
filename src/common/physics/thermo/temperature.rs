@@ -8,8 +8,6 @@ pub trait Temperature {
 }
 
 
-
-
 pub struct TemperatureThermodynamic {
   pub magnitude: Magnitude<kelvin>,
 }
@@ -19,8 +17,6 @@ impl Temperature for TemperatureThermodynamic {
       &self.magnitude
   }
 }
-
-
 
 
 pub struct TemperatureDryBulb {
@@ -60,7 +56,7 @@ impl Temperature for TemperatureDewPoint {
 
 
 pub struct TemperatureWetBulb {
-  magnitude: Magnitude<kelvin>,
+  pub magnitude: Magnitude<kelvin>,
 }
 
 impl Temperature for TemperatureWetBulb {

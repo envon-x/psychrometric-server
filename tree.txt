@@ -1,13 +1,50 @@
 .
 ├── Cargo.lock
 ├── Cargo.toml
+├
 ├── src
 │   ├── common
+│   │   ├── mod.rs
+│   │   ├── physics
+│   │   │   ├── altitude.rs
+│   │   │   ├── magnitude.rs
+│   │   │   ├── meteorology
+│   │   │   │   ├── calculator.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── psychrometry
+│   │   │   │   ├── calculator.rs
+│   │   │   │   ├── humidity_ratio.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── relative_humidity.rs
+│   │   │   │   └── specific_humidity.rs
+│   │   │   └── thermo
+│   │   │       ├── density.rs
+│   │   │       ├── eos.rs
+│   │   │       ├── mod.rs
+│   │   │       ├── molar_enthalpy.rs
+│   │   │       ├── molar_volume.rs
+│   │   │       ├── pressure.rs
+│   │   │       └── temperature.rs
+│   │   └── utils
+│   │       ├── error.rs
+│   │       └── mod.rs
 │   ├── ideal
 │   │   ├── domain
+│   │   │   ├── ideal_eos.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── psychrometry
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── psychrometry_calculator.rs
+│   │   │   └── relative_humidity.rs
 │   │   ├── infrastructure
+│   │   ├── mod.rs
 │   │   ├── presentation
-│   │   └── use-cases
+│   │   └── use_cases
+│   │       ├── calculate_pressure.rs
+│   │       ├── calculate_volume.rs
+│   │       └── mod.rs
+
 │   ├── main.rs
 │   ├── van-der-waals
 │   │   ├── domain
@@ -16,6 +53,12 @@
 │   │   └── use-cases
 │   └── virial
 │       ├── domain
+│       │   ├── mod.rs
+│       │   └── virial_eos.rs
 │       ├── infrastructure
+│       ├── mod.rs
 │       ├── presentation
-│       └── use-cases
+│       └── use_cases
+│           ├── calculate_pressure.rs
+│           ├── calculate_volume.rs
+│           └── mod.rs

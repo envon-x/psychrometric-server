@@ -1,19 +1,32 @@
+
+use uom::si::molar_energy::joule_per_mole;
+
+use crate::common::physics::magnitude::Magnitude;
+
 pub struct HumidityRatio {
-  value: f64,
+  pub magnitude: Magnitude<joule_per_mole>,
 }
 
 impl HumidityRatio {
-  fn new(value: f64) -> Self {
-    Self { value }
+  pub fn new(name: String, symbol: String, value: f64) -> Self {
+      let magnitude = Magnitude::new(name, symbol, value, joule_per_mole);
+      HumidityRatio { magnitude }
   }
-}
 
-pub struct SaturatedHumidityRatio {
-  value: f64,
-}
-
-impl SaturatedHumidityRatio {
-  fn new(value: f64) -> Self {
-    Self { value }
+  pub fn name(&self) -> &str {
+    &self.magnitude.name
   }
+
+  pub fn symbol(&self) -> &str {
+    &self.magnitude.symbol
+  }
+
+  pub fn value(&self) -> f64 {
+      self.magnitude.value
+  }
+
+  pub fn unit(&self) -> &joule_per_mole {
+    &self.magnitude.unit
+  }
+
 }

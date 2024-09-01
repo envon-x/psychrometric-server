@@ -1,34 +1,16 @@
-//! Example showing how to create a custom system of quantities.
-
 #[macro_use]
-extern crate uom;
-
-use crate::length::{foot, meter};
-use uom::fmt::DisplayStyle::Abbreviation;
-
-fn main() {
-    let l1 = f32::Length::new::<meter>(100.0);
-
-    println!(
-        "{} = {}",
-        l1.into_format_args(meter, Abbreviation),
-        l1.into_format_args(foot, Abbreviation)
-    );
-}
-
-#[macro_use]
-mod length {
+mod mass_ratio {
     quantity! {
         /// Length (base unit meter, m).
-        quantity: Length; "length";
+        quantity: MassRatio; "mass_ratio";
         /// Length dimension, m.
         dimension: Q<
-            P1,  // length
+            P1,  // ratio
             Z0,  // mass
             Z0>; // time
         units {
-            @meter: 1.0E0; "m", "meter", "meters";
-            @foot: 3.048E-1; "ft", "foot", "feet";
+            @kg_per_kg: 1.0E0; "kg_per_kg", "kg_per_kg", "kilogram_per_kilograms";
+            @g_per_kg: 1.08E3; "g_per_kg", "g_per_kg", "gram_per_kilograms";
         }
     }
 }
@@ -67,13 +49,13 @@ mod time {
 
 system! {
     quantities: Q {
-        length: meter, L;
+        mass_ratio: kg_per_kg, L;
         mass: kilogram, M;
         time: second, T;
     }
 
     units: U {
-        mod length::Length,
+        mod mass_ratio::MassRatio,
         mod mass::Mass,
         mod time::Time,
     }

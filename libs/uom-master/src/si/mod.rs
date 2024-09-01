@@ -115,6 +115,7 @@ system! {
         mass_density::MassDensity,
         mass_flux::MassFlux,
         mass_per_energy::MassPerEnergy,
+        mass_per_mass::MassPerMass,
         mass_rate::MassRate,
         molality::Molality,
         molar_concentration::MolarConcentration,

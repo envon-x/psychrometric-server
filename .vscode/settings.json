@@ -1,0 +1,31 @@
+{
+  "lldb.displayFormat": "decimal",
+  "lldb.showDisassembly": "auto",
+  "lldb.dereferencePointers": true,
+  "lldb.consoleMode": "commands",
+	"files.autoSave": "off",
+	"files.autoSaveDelay": 3000,
+	"editor.wordWrapColumn": 80,
+	"editor.tokenColorCustomizations": {
+		"comments": "#443838",
+		"textMateRules": []
+	},
+
+	"workbench.iconTheme": "eq-material-theme-icons",
+	"workbench.colorTheme": "Bearded Theme Monokai Black",
+	"workbench.colorCustomizations": {
+    "editor.selectionBackground": "#135564",
+    "editor.selectionHighlightBackground": "#135564"
+	},
+  "files.exclude": {
+		"*.bcf": true,
+		"*.bbl": true,
+		"*.lof": true,
+		"capitulos/*.bcf": true, 
+  },
+  "cSpell.language": "en-GB,es-ES",
+	"cSpell.words": [
+		"psicrométrica",
+		"viriales",
+	],
+}
