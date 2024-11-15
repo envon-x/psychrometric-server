@@ -32,10 +32,15 @@ fn main() {
     "first_half.len() ={} second_half.len()={}",
     first_half.len(),
     second_half.len()
-  )
+  );
 
-  let wordlit = "one,two,three, four, five";
-  for word in wordlit.split(','){
+  let word_list = "one, two, three, four, five";
+  for word in word_list.split(','){
     println!("word: {}", word);
   }
+
+  println!("\nAquí empieza todo lo que tiene que ver con EOS\n");
+
+  
+
 }

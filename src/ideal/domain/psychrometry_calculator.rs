@@ -36,7 +36,7 @@ impl PsychrometryCalculator for Mixture {
         let calc_HumidityRatio_from_TDewPoint = self.calc_HumidityRatio_from_TDewPoint(temperature_dew_point, absolute_pressure);
         let wbt = TemperatureWetBulb {
           magnitude: Magnitude {
-            name: "Temperatura de rocio".to_string(),
+            name: "Temperatura de rocío".to_string(),
             symbol: String::from("T_db"),
             value: 30.0,
             unit: kelvin,

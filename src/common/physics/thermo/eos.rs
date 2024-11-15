@@ -9,6 +9,8 @@ use crate::common::physics::magnitude::Magnitude;
 
 pub trait EquationOfState {
 
+  /// Calcula la presión del sistema en términos del sistema internacional (SI)
+  /// 
   fn calculate_pressure(
     &self,
     z: f64,

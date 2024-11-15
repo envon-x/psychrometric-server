@@ -1,4 +1,5 @@
 {
+	
   "lldb.displayFormat": "decimal",
   "lldb.showDisassembly": "auto",
   "lldb.dereferencePointers": true,
@@ -12,7 +13,7 @@
 	},
 
 	"workbench.iconTheme": "eq-material-theme-icons",
-	"workbench.colorTheme": "Bearded Theme Monokai Black",
+	"workbench.colorTheme": "Best Themes - Karma",
 	"workbench.colorCustomizations": {
     "editor.selectionBackground": "#135564",
     "editor.selectionHighlightBackground": "#135564"
@@ -23,9 +24,11 @@
 		"*.lof": true,
 		"capitulos/*.bcf": true, 
   },
-  "cSpell.language": "en-GB,es-ES",
+  "cSpell.language": "en,es",
 	"cSpell.words": [
 		"psicrométrica",
 		"viriales",
+		"thermo",
+		"psychrometry"
 	],
 }

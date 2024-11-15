@@ -23,7 +23,7 @@ impl Greete for Teacher {
  }  
 }
 
-// Genéricos con restriccion
+// Genéricos con restricción
 fn outer_say_hello<T: Greete> (t: &T) {
   t.say_hello();
 }
