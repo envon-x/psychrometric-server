@@ -12,7 +12,7 @@ pub struct Component {
 impl Component {
   pub fn new(
     compound: Compound,
-    phase: String,
+    phase: Phase,
     composition: f64, 
   ) -> Self {
     Component {

@@ -1,4 +1,4 @@
-use uom::si::ratio::{self, part_per_hundred};
+use uom::si::ratio::{part_per_hundred};
 
 use crate::common::physics::magnitude::Magnitude;
 

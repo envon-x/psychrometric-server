@@ -8,8 +8,6 @@ pub trait Temperature {
 }
 
 
-/// This is the thermodynamic temperature
-/// expresed in kelvin's
 pub struct TemperatureThermodynamic {
   pub magnitude: Magnitude<kelvin>,
 }

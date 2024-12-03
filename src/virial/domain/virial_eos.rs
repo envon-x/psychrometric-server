@@ -9,12 +9,18 @@ use uom::si::thermodynamic_temperature::kelvin;
 // mod common;
 
 pub struct VirialEos {
-    b: f64, // virial coefficient
+    b: f64, // virial coefficient  
+    second_virial_coeffcient: f64,
+    thrid_virial_coefficient: f64,
+    universal_gas_constant: f64,
 }
 
 impl VirialEos {
     pub fn new(b: f64) -> Self {
-        VirialEos { b }
+        VirialEos { 
+            b 
+
+        }
     }
 }
 

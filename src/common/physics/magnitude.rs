@@ -1,10 +1,10 @@
 // extern crate uom;
 
 pub struct Magnitude<Unit> {
-  pub name: String,
-  pub symbol: String,
-  pub value: f64,
-  pub unit: Unit
+  pub name: String,    // Nombre de la magnitud
+  pub symbol: String,  // El sýmbolo que representa a la magnitud
+  pub value: f64,      // Valor numérico de la magnitud
+  pub unit: Unit       // Unidad de la magnitud
 }
 
 impl<T> Magnitude<T> {
@@ -17,6 +17,7 @@ impl<T> Magnitude<T> {
       name, 
       symbol, 
       value, 
-      unit}
+      unit
+    }
   }
 }
