@@ -24,15 +24,6 @@ mod ideal;
 fn main() {
   println!(":::::::::::::::::::::::::: Thermo ::::::::::::::::::::::::::\n");
 
-  // let pressure = AbsolutePressure::new(
-        // String::from("Absolute Pressure"),
-        // String::from("Pa"),
-        // 101325.0,
-    // );
-
-    // Usando uom para obtener una representación más precisa
-    // println!("Pressure: {} {} = {} {:?}", pressure.magnitude().name, pressure.magnitude().symbol, pressure.magnitude().value, pressure.magnitude().unit);
-
   let abs_pressure = AbsolutePressure::new(
   "Presión absoluta".to_string(), 
   "Pa".to_string(), 
@@ -44,19 +35,20 @@ fn main() {
 
 // let temperature = TemperatureThermodynamic::magnitude(&self)
 
-  let dew_point_temperature = TemperatureDewPoint::new (
+  let thermodynamic_temperature = ThermodynamicTemperature::new (
       "Temperatura absoluta".to_string(),
       't'.to_string(),
       298.0,
-      kelvin
+      kelvin,
   );
 
   println!("{} {} = {} {:?}", 
-  dew_point_temperature.magnitude().name, 
-  dew_point_temperature.magnitude().symbol,  
-  dew_point_temperature.magnitude().value, 
-  dew_point_temperature.magnitude().unit);
+  thermodynamic_temperature.magnitude().name, 
+  thermodynamic_temperature.magnitude().symbol,  
+  thermodynamic_temperature.magnitude().value, 
+  thermodynamic_temperature.magnitude().unit);
 
   let ig = IdealEos::new();
-  println!("valor: {:#?}", ig.calculate_volume(&abs_pressure, &dew_point_temperature).magnitude().value);
+  let volume = ig.calculate_volume(&abs_pressure, &thermodynamic_temperature);
+  println!("valor: {:#?} {:#?}", volume.magnitude().value, volume.magnitude().unit);
 }
