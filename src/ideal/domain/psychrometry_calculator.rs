@@ -34,14 +34,12 @@ impl PsychrometryCalculator for Mixture {
         let _ = temperature_dew_point;
 
         let calc_HumidityRatio_from_TDewPoint = self.calc_HumidityRatio_from_TDewPoint(temperature_dew_point, absolute_pressure);
-        let wbt = TemperatureWetBulb {
-          magnitude: Magnitude {
-            name: "Temperatura de rocío".to_string(),
-            symbol: String::from("T_db"),
-            value: 30.0,
-            unit: kelvin,
-          },
-        };
+        let wbt = TemperatureWetBulb::new(
+            "Temperatura de rocío".to_string(),
+            String::from("T_db"),
+            30.0,
+            kelvin,
+        );
         wbt
     }
     
@@ -304,6 +302,27 @@ impl PsychrometryCalculator for Mixture {
         humidity_ratio: &HumidityRatio,
         absolute_pressure: &AbsolutePressure
       ) -> MoistureGasDensity {
+        todo!()
+    }
+
+    fn get_SaturatedVapor_Pressure(
+        &self, 
+        TDryBulb: TemperatureDryBulb
+      ) -> SaturatedVaporPressure {
+        todo!()
+    }
+
+    fn get_MoistureGasEnthalpy(
+        &self, 
+        TDryBulb: TemperatureDryBulb
+      ) -> SaturatedVaporPressure {
+        todo!()
+    }
+
+    fn get_MoistureGasVolume(
+        &self, 
+        TDryBulb: TemperatureDryBulb
+      ) -> SaturatedVaporPressure {
         todo!()
     }
     

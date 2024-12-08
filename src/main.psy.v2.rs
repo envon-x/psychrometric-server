@@ -13,7 +13,7 @@ mod ideal;
 use ideal::domain::psychrometry_calculator;
 
 mod virial;
-
+use virial::domain::b_virial_coeff_calculator;
 fn main() {
 
   // let b_coeff = 

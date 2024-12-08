@@ -1,0 +1,3 @@
+pub enum PSYCHROMETRY_ERROR {
+  INFINITY
+}

@@ -1,5 +1,6 @@
 // extern crate uom;
 
+#[derive(Debug)]
 pub struct Magnitude<Unit> {
   pub name: String,    // Nombre de la magnitud
   pub symbol: String,  // El sýmbolo que representa a la magnitud

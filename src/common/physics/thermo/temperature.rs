@@ -3,66 +3,28 @@ use crate::common::physics::magnitude::Magnitude;
 extern crate uom;
 use uom::si::thermodynamic_temperature::kelvin;
 
-pub trait Temperature {
-  fn magnitude(&self) -> &Magnitude<kelvin>;
+pub struct Temperature<Unit> {
+    magnitude: Magnitude<Unit>,
 }
 
+impl<Unit> Temperature<Unit> {
+    pub fn new(name: String, symbol: String, value: f64, unit: Unit) -> Self {
+        Temperature {
+            magnitude: Magnitude::new(name, symbol, value, unit),
+        }
+    }
 
-/// This is the thermodynamic temperature
-/// expresed in kelvin's
-pub struct TemperatureThermodynamic {
-  pub magnitude: Magnitude<kelvin>,
+    pub fn magnitude(&self) -> &Magnitude<Unit> {
+        &self.magnitude
+    }
 }
 
-impl Temperature for TemperatureThermodynamic {
-  fn magnitude(&self) -> &Magnitude<kelvin> {
-      &self.magnitude
-  }
-}
+// Specific Types of Temperature
+pub type TemperatureDryBulb = Temperature<kelvin>;
+pub type StandardAtmTemperature = Temperature<kelvin>;
+pub type TemperatureDewPoint = Temperature<kelvin>;
+pub type TemperatureWetBulb = Temperature<kelvin>;
 
-
-pub struct TemperatureDryBulb {
-  pub magnitude: Magnitude<kelvin>,
-}
-
-impl Temperature for TemperatureDryBulb {
-  fn magnitude(&self) -> &Magnitude<kelvin> {
-      &self.magnitude
-  }
-}
-
-
-
-pub struct StandardAtmTemperature {
-  pub magnitude: Magnitude<kelvin>,
-}
-
-impl Temperature for StandardAtmTemperature {
-  fn magnitude(&self) -> &Magnitude<kelvin> {
-      &self.magnitude
-  }
-}
-
-
-
-pub struct TemperatureDewPoint {
-  pub magnitude: Magnitude<kelvin>,
-}
-
-impl Temperature for TemperatureDewPoint {
-  fn magnitude(&self) -> &Magnitude<kelvin> {
-      &self.magnitude
-  }
-}
-
-
-
-pub struct TemperatureWetBulb {
-  pub magnitude: Magnitude<kelvin>,
-}
-
-impl Temperature for TemperatureWetBulb {
-  fn magnitude(&self) -> &Magnitude<kelvin> {
-      &self.magnitude
-  }
-}
+pub type ThermodynamicTemperature = Temperature<kelvin>;
+pub type VaporPressureDeficit = Temperature<kelvin>;
+pub type SeaLevelPressure = Temperature<kelvin>;
