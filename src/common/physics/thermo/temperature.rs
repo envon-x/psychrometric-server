@@ -26,5 +26,3 @@ pub type TemperatureDewPoint = Temperature<kelvin>;
 pub type TemperatureWetBulb = Temperature<kelvin>;
 
 pub type ThermodynamicTemperature = Temperature<kelvin>;
-pub type VaporPressureDeficit = Temperature<kelvin>;
-pub type SeaLevelPressure = Temperature<kelvin>;
