@@ -3,7 +3,7 @@
 #[derive(Debug)]
 pub struct Magnitude<Unit> {
   pub name: String,    // Nombre de la magnitud
-  pub symbol: String,  // El sýmbolo que representa a la magnitud
+  pub symbol: String,  // El símbolo que representa a la magnitud
   pub value: f64,      // Valor numérico de la magnitud
   pub unit: Unit       // Unidad de la magnitud
 }

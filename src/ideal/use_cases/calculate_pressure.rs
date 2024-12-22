@@ -3,7 +3,6 @@ use uom::si::pressure::pascal;
 use uom::si::volume::cubic_meter;
 use uom::si::thermodynamic_temperature::kelvin;
 
-use crate::common::physics::magnitude::Magnitude;
 use crate::common::physics::thermo::eos::EquationOfState;
 use crate::common::physics::thermo::molar_volume::MolarVolume;
 use crate::common::physics::thermo::pressure::AbsolutePressure;

@@ -6,6 +6,9 @@ edition = "2021"
 # [dependencies.uom]
 # path = "./libs/uom-master"
 
+[profile.dev]
+panic = 'abort'
+
 [dependencies]
 peroxide = "0.37.7"
 sea-orm = "1.0.0"

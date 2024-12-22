@@ -38,7 +38,7 @@ fn main() {
   let thermodynamic_temperature = ThermodynamicTemperature::new (
       "Temperatura absoluta".to_string(),
       't'.to_string(),
-      298.0,
+      -298.0,
       kelvin,
   );
 
@@ -51,4 +51,11 @@ fn main() {
   let ig = IdealEos::new();
   let volume = ig.calculate_volume(&abs_pressure, &thermodynamic_temperature);
   println!("valor: {:#?} {:#?}", volume.magnitude().value, volume.magnitude().unit);
+
+
+
+
+
+
+
 }

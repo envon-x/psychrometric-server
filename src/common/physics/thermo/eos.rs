@@ -1,15 +1,22 @@
 extern crate uom;
 use uom::si::{
-  molar_volume::cubic_meter_per_mole, pressure::pascal, thermodynamic_temperature::kelvin, volume::cubic_meter
+  molar_volume::cubic_meter_per_mole, 
+  pressure::pascal, 
+  thermodynamic_temperature::kelvin, 
+  volume::cubic_meter
 };
 
 use crate::common::physics::magnitude::Magnitude;
 
-use super::{molar_volume::{Volume, MolarVolume}, pressure::{AbsolutePressure, Pressure}, temperature::ThermodynamicTemperature};
+use super::{
+  molar_volume::{Volume, MolarVolume}, 
+  pressure::{AbsolutePressure, Pressure}, 
+  temperature::ThermodynamicTemperature
+};
 
 pub trait EquationOfState {
 
-  /// Permite calcular la presión del sistema en términos del sistema internacional (SI)
+  /// Calcula la presión absoluta de un sistema termodinámico en términos del sistema internacional (SI)
   /// z: coeficiente virial, adimensional
   /// molar_volume: Es el objeto Magnitud, cuyo valor es el volumen molar y en unidades m³/mol
   /// temperature: Es el objeto magnitud cuyo valor es la  temperatura en kelvin's, K
@@ -22,7 +29,7 @@ pub trait EquationOfState {
     temperature: &ThermodynamicTemperature
   ) -> AbsolutePressure;
     
-  /// Permite calcular el volumen molar del sistema en términos del sistema internacional (SI), m³/mol
+  /// Calcula el volumen molar del sistema en términos del sistema internacional (SI), m³/mol
   /// z: coeficiente virial, adimensional
   /// pressure: Es el objeto Magnitud, cuyo valor es la presión y en unidades, Pa
   /// temperature: Es el objeto magnitud cuyo valor es la  temperatura en kelvin's, K

@@ -34,7 +34,13 @@ impl EquationOfState for IdealEos {
     // formula: P = RT / V
     let r = self.universal_gas_constant;
     let pressure = self.compressibility_factor * r * temperature.magnitude().value / molar_volume.magnitude().value;
-    AbsolutePressure::new("absolute pressure".to_string(), "p".to_string(), pressure, pascal)
+
+    AbsolutePressure::new(
+      "absolute pressure".to_string(), 
+      "p".to_string(), 
+      pressure, 
+      pascal
+    )
   }
   
   /// Calculate volume for ideal gas
@@ -48,14 +54,22 @@ impl EquationOfState for IdealEos {
     let r = self.universal_gas_constant;
     let z = self.compressibility_factor;
     
-    let volume = z * r * temperature.magnitude().value / pressure.magnitude().value;
-    
+    let volume_value = z * r * temperature.magnitude().value / pressure.magnitude().value;
+
+
+    // if volume_value <= 0.0 {
+    //   panic!("Can't proceed with this volume_value: {}", volume_value)
+    // }
+
+
+
     MolarVolume::new(
-      "volume".into(), 
-      "v".into(),  
-      volume, 
+      "volume".to_string(), 
+      "v".to_string(),  
+      volume_value, 
       cubic_meter_per_mole
     )
+
   }
 }
 
